@@ -77,7 +77,9 @@ HomePage.getLayout = function getLayout(page) {
 
 // load data (SSG)
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:5000/pc");
+  const res = await fetch(
+    "https://pc-builder-backend-main-eight.vercel.app/pc"
+  );
   const pcData = await res.json();
 
   return {

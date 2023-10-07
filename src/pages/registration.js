@@ -29,7 +29,8 @@ export default function Signup() {
         logOut(auth);
       }
       signIn("github", {
-        callbackUrl: "http://localhost:3000/",
+        callbackUrl:
+          "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
       });
     } catch (error) {
       toast("There is something wrong");
@@ -99,7 +100,8 @@ export default function Signup() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/build-pc",
+              callbackUrl:
+                "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

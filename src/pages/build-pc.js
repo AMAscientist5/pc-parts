@@ -143,7 +143,9 @@ PcBuilderPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/builder-data");
+  const res = await fetch(
+    "https://pc-builder-backend-main-eight.vercel.app//builder-data"
+  );
   const data = await res.json();
   return {
     props: {

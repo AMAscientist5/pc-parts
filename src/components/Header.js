@@ -14,7 +14,9 @@ const Header = () => {
 
   const logout = () => {
     logOut(auth);
-    router.push("http://localhost:3000/");
+    router.push(
+      "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
+    );
   };
   return (
     <div className="bg-white flex items-center justify-between lg:container w-[95%] mx-auto py-2 z-50">
@@ -66,8 +68,11 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    signOut({ callbackUrl: "http://localhost:3000/" });
-                    // router.push("http://localhost:3000");
+                    signOut({
+                      callbackUrl:
+                        "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+                    });
+                    // router.push("https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/");
                   }}
                   className="hover:text-white bg-blue-800 outline-none text-gray-300 "
                 >

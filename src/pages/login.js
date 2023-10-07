@@ -1,11 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import {
-//   getAuth,
-//   signInWithEmailAndPassword,
-//   signOut as logOut,
-// } from "firebase/auth";
-// import { useRouter } from "next/router";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signIn } from "next-auth/react";
@@ -15,21 +8,12 @@ import { AiFillGithub } from "react-icons/ai";
 import auth from "@/firebase/firebaseAuth";
 
 export default function Login() {
-  // const [user, loading, error] = useAuthState(auth);
-
-  // const login = () => {
-  //   signInWithEmailAndPassword(auth, user?.email, user?.password);
-  // };
   const { register, handleSubmit } = useForm();
-  // const router = useRouter();
 
   const onSubmit = (data) => {
-    // console.log(data?.email, data?.password, "testing");
-    // signInWithEmailAndPassword(auth, data?.email, data?.password);
-    // router.push("http://localhost:3000/build-pc");
-
     signIn("github", {
-      callbackUrl: "http://localhost:3000/build-pc",
+      callbackUrl:
+        "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
     });
   };
 
@@ -86,7 +70,8 @@ export default function Login() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/build-pc",
+              callbackUrl:
+                "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

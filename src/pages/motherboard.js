@@ -1,9 +1,9 @@
-import MainLayout from '@/components/Layout/MainLayout';
-import ComponentGrid from '@/components/UI/ComponentGrid';
-import Featured from '@/components/UI/Featured';
-import React from 'react';
+import MainLayout from "@/components/Layout/MainLayout";
+import ComponentGrid from "@/components/UI/ComponentGrid";
+import Featured from "@/components/UI/Featured";
+import React from "react";
 
-const MotherBoardPage = ({pcData}) => {
+const MotherBoardPage = ({ pcData }) => {
   return (
     <div>
       <ComponentGrid pcData={pcData}></ComponentGrid>
@@ -17,9 +17,10 @@ MotherBoardPage.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
 
-
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:5000/motherboard");
+  const res = await fetch(
+    "https://pc-builder-backend-main-eight.vercel.app//motherboard"
+  );
   const pcData = await res.json();
 
   return {

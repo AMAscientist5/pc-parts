@@ -1,11 +1,11 @@
-import MainLayout from '@/components/Layout/MainLayout';
-import ComponentGrid from '@/components/UI/ComponentGrid';
-import React from 'react';
+import MainLayout from "@/components/Layout/MainLayout";
+import ComponentGrid from "@/components/UI/ComponentGrid";
+import React from "react";
 
-const OtherPage = ({pcData}) => {
+const OtherPage = ({ pcData }) => {
   return (
     <div>
-        <ComponentGrid pcData={pcData}></ComponentGrid>
+      <ComponentGrid pcData={pcData}></ComponentGrid>
     </div>
   );
 };
@@ -17,7 +17,9 @@ OtherPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:5000/others");
+  const res = await fetch(
+    "https://pc-builder-backend-main-eight.vercel.app//others"
+  );
   const pcData = await res.json();
 
   return {

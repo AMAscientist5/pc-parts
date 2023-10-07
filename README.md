@@ -16,7 +16,7 @@ This is a Awesome Website for Pc Parts and making Pc with all the components.
 1.Clone my project
 
 ```bash
-  git clone https://github.com/amagithub
+  git clone https://github.com/AMAscientist5/pc-parts.git
 ```
 
 2.Install node modules
@@ -33,8 +33,8 @@ This is a Awesome Website for Pc Parts and making Pc with all the components.
 
 ## 🔗 Links
 
-[![portfolio](https://img.shields.io/badge/Livesite-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://pc-builder-flame-one.vercel.app/)
+[![portfolio](https://img.shields.io/badge/Livesite-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/)
 
-[![portfolio](https://img.shields.io/badge/Github-client-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/BayajidAlam/pr-builder-with-next-rtk-ant)
+[![portfolio](https://img.shields.io/badge/Github-client-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AMAscientist5/pc-parts)
 
-[![portfolio](https://img.shields.io/badge/Github-server-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/BayajidAlam/pc-builder-backend)
+[![portfolio](https://img.shields.io/badge/Github-server-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AMAscientist5/pc-parts-backend)
