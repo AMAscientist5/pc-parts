@@ -18,7 +18,7 @@ StoragePage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://pc-builder-backend-main-eight.vercel.app//storage"
+    "https://pc-builder-backend-main-eight.vercel.app/storage"
   );
   const pcData = await res.json();
 

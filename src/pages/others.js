@@ -18,7 +18,7 @@ OtherPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://pc-builder-backend-main-eight.vercel.app//others"
+    "https://pc-builder-backend-main-eight.vercel.app/others"
   );
   const pcData = await res.json();
 

@@ -19,7 +19,7 @@ MotherBoardPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://pc-builder-backend-main-eight.vercel.app//motherboard"
+    "https://pc-builder-backend-main-eight.vercel.app/motherboard"
   );
   const pcData = await res.json();
 

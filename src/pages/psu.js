@@ -18,7 +18,7 @@ PowerSupply.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://pc-builder-backend-main-eight.vercel.app//psu"
+    "https://pc-builder-backend-main-eight.vercel.app/psu"
   );
   const pcData = await res.json();
 

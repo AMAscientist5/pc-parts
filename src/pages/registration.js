@@ -83,7 +83,8 @@ export default function Signup() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/build-pc",
+              callbackUrl:
+                "https://pc-builder-client-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

@@ -5,7 +5,6 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import auth from "@/firebase/firebaseAuth";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
@@ -70,7 +69,8 @@ export default function Login() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/",
+              callbackUrl:
+                "https://pc-builder-client-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

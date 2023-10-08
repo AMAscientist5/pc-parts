@@ -18,7 +18,7 @@ MonitorPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://pc-builder-backend-main-eight.vercel.app//monitor"
+    "https://pc-builder-backend-main-eight.vercel.app/monitor"
   );
   const pcData = await res.json();
 

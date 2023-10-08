@@ -53,7 +53,7 @@ const HomePage = ({ pcData }) => {
     <div className="container mx-auto">
       <Hero />
       <h2 className="my-4 lg:mb-12 lg:text-5xl text-center">
-        Featured Product
+        Featured Products
       </h2>
       <Featured pcData={pcData}></Featured>
       <h2 className="mb-4 mt-20 lg:mb-12 lg:text-5xl text-center">

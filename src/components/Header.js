@@ -51,21 +51,6 @@ const Header = () => {
                 Others
               </Link>
             </li>
-            {session?.user && (
-              <li>
-                <button
-                  onClick={() => {
-                    signOut({
-                      callbackUrl:
-                        "https://pc-builder-client-r46jx5dfu-amascientist5.vercel.app/",
-                    });
-                  }}
-                  className="hover:text-white bg-blue-800 outline-none text-gray-300 "
-                >
-                  Log out
-                </button>
-              </li>
-            )}
           </ul>
         </div>
 
@@ -75,6 +60,20 @@ const Header = () => {
             Build
           </button>
         </Link>
+        {session?.user ? (
+          <button
+            onClick={() => signOut(session)}
+            className="h-8 w-24 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 border border-none text-white font-bold"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link href="/login">
+            <button className="h-8 w-24 bg-gradient-to-r from-indigo-500 to-sky-300 border border-none text-white font-bold">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
