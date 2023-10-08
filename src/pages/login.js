@@ -70,8 +70,7 @@ export default function Login() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl:
-                "https://pc-builder-client-r46jx5dfu-amascientist5.vercel.app/build-pc",
+              callbackUrl: "http://localhost:3000/",
             })
           }
           className="flex items-center justify-center text-white"
