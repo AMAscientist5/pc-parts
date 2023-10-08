@@ -33,7 +33,7 @@ This is a Awesome Website for Pc Parts and making Pc with all the components.
 
 ## 🔗 Links
 
-[![portfolio](https://img.shields.io/badge/Livesite-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/)
+[![portfolio](https://img.shields.io/badge/Livesite-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://pc-builder-client-amascientist5.vercel.app/)
 
 [![portfolio](https://img.shields.io/badge/Github-client-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AMAscientist5/pc-parts)
 
