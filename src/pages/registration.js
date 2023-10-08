@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-// import { signOut as logOut } from "firebase/auth";
+import { signOut as logOut } from "firebase/auth";
 import { signIn } from "next-auth/react";
 
 import { useRouter } from "next/router";
@@ -9,15 +9,51 @@ import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AiFillGithub } from "react-icons/ai";
 import auth from "@/firebase/firebaseAuth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Signup() {
+  // const [createUserWithEmailAndPassword, user, loading, error] =
+  //   useCreateUserWithEmailAndPassword(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
   const { register, handleSubmit } = useForm();
   const router = useRouter();
-  const onSubmit = (data) => {
-    console.log(data);
+
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
+
+  // const [user, loading, error] = useAuthState(auth);
+
+  // const logout = () => {
+  //   logOut(auth);
+  //   router.push(
+  //     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
+  //     "http://localhost:3000/"
+  //   );
+  // };
+
+  const onSubmit = async (data) => {
+    try {
+      const { user } = await createUserWithEmailAndPassword(
+        data.email,
+        data.password
+      );
+      if (user) {
+        toast("user created successfully");
+        console.log(user, "from register");
+        // router.push("https://pc-builder-client-amascientist5.vercel.app");
+        // logOut(auth);
+      }
+      // signIn("github", {
+      //   callbackUrl:
+      //     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+      //     "http://localhost:3000/build-pc",
+      // });
+    } catch (error) {
+      toast("There is something wrong");
+    }
   };
 
   return (

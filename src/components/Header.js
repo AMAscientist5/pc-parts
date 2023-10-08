@@ -1,9 +1,26 @@
-import { signOut, useSession } from "next-auth/react";
+// import { useRouter } from "next/router";
+// import { signOut as logOut } from "firebase/auth";
+// import { useSignOut } from "react-firebase-hooks/auth";
 import Link from "next/link";
 import React from "react";
+import { useDeleteUser } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "@/firebase/firebaseAuth";
+import { signOut as sessionOut, useSession } from "next-auth/react";
 
 const Header = () => {
+  // const [signOut] = useSignOut(auth);
+  // const router = useRouter();
+  const [deleteUser] = useDeleteUser(auth);
   const { data: session } = useSession();
+  const [user, loading, error] = useAuthState(auth);
+
+  const logout = async () => {
+    const success = await deleteUser();
+    if (success) {
+      alert("You are sign out");
+    }
+  };
 
   return (
     <div className="bg-white flex items-center justify-between lg:container w-[95%] mx-auto py-2 z-50">
@@ -60,19 +77,30 @@ const Header = () => {
             Build
           </button>
         </Link>
-        {session?.user ? (
+        {user ? (
           <button
-            onClick={() => signOut(session)}
+            onClick={() => logout()}
             className="h-8 w-24 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 border border-none text-white font-bold"
           >
             Log Out
           </button>
         ) : (
-          <Link href="/login">
-            <button className="h-8 w-24 bg-gradient-to-r from-indigo-500 to-sky-300 border border-none text-white font-bold">
-              Login
-            </button>
-          </Link>
+          <div>
+            {session?.user ? (
+              <button
+                onClick={() => sessionOut(session)}
+                className="h-8 w-24 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500 border border-none text-white font-bold"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link href="/login">
+                <button className="h-8 w-24 bg-gradient-to-r from-indigo-500 to-sky-300 border border-none text-white font-bold">
+                  Login
+                </button>
+              </Link>
+            )}
+          </div>
         )}
       </div>
     </div>

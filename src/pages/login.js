@@ -1,15 +1,33 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useRouter } from "next/router";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+
+// import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "@/firebase/firebaseAuth";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
 
+  const router = useRouter();
+  // const [signInWithEmailAndPassword, user, loading, error] =
+  //   useSignInWithEmailAndPassword(auth);
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  console.log(user?.user?.email, "from the login page from hook");
+
   const onSubmit = (data) => {
+    console.log(data?.email, data?.password, "from login");
+    createUserWithEmailAndPassword(data?.email, data?.password);
+    router.push("http://localhost:3000/");
+    // signInWithEmailAndPassword(email, password);
     // signIn("github", {
     //   callbackUrl:
     //     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
