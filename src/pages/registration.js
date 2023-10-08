@@ -30,7 +30,8 @@ export default function Signup() {
       }
       signIn("github", {
         callbackUrl:
-          "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+          // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+          "http://localhost:3000/build-pc",
       });
     } catch (error) {
       toast("There is something wrong");
@@ -101,7 +102,8 @@ export default function Signup() {
           onClick={() =>
             signIn("github", {
               callbackUrl:
-                "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+                // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+                "http://localhost:3000/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

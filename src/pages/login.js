@@ -13,7 +13,8 @@ export default function Login() {
   const onSubmit = (data) => {
     signIn("github", {
       callbackUrl:
-        "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+        // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+        "http://localhost:3000/build-pc",
     });
   };
 
@@ -70,8 +71,8 @@ export default function Login() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl:
-                "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+              callbackUrl: "http://localhost:3000/build-pc",
+              // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

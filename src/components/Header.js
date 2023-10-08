@@ -15,7 +15,8 @@ const Header = () => {
   const logout = () => {
     logOut(auth);
     router.push(
-      "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
+      // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
+      "http://localhost:3000/"
     );
   };
   return (
@@ -69,8 +70,8 @@ const Header = () => {
                 <button
                   onClick={() => {
                     signOut({
-                      callbackUrl:
-                        "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+                      callbackUrl: "http://localhost:3000/",
+                      // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
                     });
                     // router.push("https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/");
                   }}
