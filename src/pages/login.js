@@ -24,15 +24,8 @@ export default function Login() {
   console.log(user?.user?.email, "from the login page from hook");
 
   const onSubmit = (data) => {
-    console.log(data?.email, data?.password, "from login");
     createUserWithEmailAndPassword(data?.email, data?.password);
-    router.push("http://localhost:3000/");
-    // signInWithEmailAndPassword(email, password);
-    // signIn("github", {
-    //   callbackUrl:
-    //     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
-    //     "http://localhost:3000/build-pc",
-    // });
+    router.push("https://pc-builder-client-amascientist5.vercel.app/");
   };
 
   return (
@@ -78,17 +71,17 @@ export default function Login() {
         >
           Login
         </button>
-        <p className="mt-4 text-gray-600">
+        {/* <p className="mt-4 text-gray-600">
           New here?{" "}
           <Link href="/registration" className="text-blue-500 font-medium">
             Create account
           </Link>
-        </p>
+        </p> */}
         <div
           onClick={() =>
             signIn("github", {
               callbackUrl:
-                "https://pc-builder-client-amascientist5.vercel.app/build-pc",
+                "https://pc-builder-client-amascientist5.vercel.app/",
             })
           }
           className="flex items-center justify-center text-white"
