@@ -11,11 +11,11 @@ export default function Login() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    signIn("github", {
-      callbackUrl:
-        // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
-        "http://localhost:3000/build-pc",
-    });
+    // signIn("github", {
+    //   callbackUrl:
+    //     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+    //     "http://localhost:3000/build-pc",
+    // });
   };
 
   return (
@@ -57,7 +57,6 @@ export default function Login() {
         <button
           type="submit"
           // onClick={login}
-          // className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold py-2 rounded-md hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-colors"
           className="w-full bg-gradient-to-r from-indigo-500 via-sky-500 to-blue-500 text-white font-semibold py-2 rounded-md hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-600 transition-colors"
         >
           Login
@@ -71,8 +70,8 @@ export default function Login() {
         <div
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/build-pc",
-              // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
+              callbackUrl:
+                "https://pc-builder-client-r46jx5dfu-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"

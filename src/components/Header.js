@@ -1,24 +1,10 @@
 import { signOut, useSession } from "next-auth/react";
-import { signOut as logOut } from "firebase/auth";
-import { useRouter } from "next/router";
-
-import { useAuthState } from "react-firebase-hooks/auth";
 import Link from "next/link";
 import React from "react";
-import auth from "@/firebase/firebaseAuth";
 
 const Header = () => {
   const { data: session } = useSession();
-  const [user, loading, error] = useAuthState(auth);
-  const router = useRouter();
 
-  const logout = () => {
-    logOut(auth);
-    router.push(
-      // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
-      "http://localhost:3000/"
-    );
-  };
   return (
     <div className="bg-white flex items-center justify-between lg:container w-[95%] mx-auto py-2 z-50">
       <Link href="/">
@@ -70,22 +56,10 @@ const Header = () => {
                 <button
                   onClick={() => {
                     signOut({
-                      callbackUrl: "http://localhost:3000/",
-                      // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+                      callbackUrl:
+                        "https://pc-builder-client-r46jx5dfu-amascientist5.vercel.app/",
                     });
-                    // router.push("https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/");
                   }}
-                  className="hover:text-white bg-blue-800 outline-none text-gray-300 "
-                >
-                  Log out
-                </button>
-              </li>
-            )}
-            {user?.email && (
-              <li>
-                <button
-                  // onClick={() => signOut(session)}
-                  onClick={logout}
                   className="hover:text-white bg-blue-800 outline-none text-gray-300 "
                 >
                   Log out
@@ -107,3 +81,33 @@ const Header = () => {
 };
 
 export default Header;
+
+{
+  /* {user?.email && (
+              <li>
+                <button
+                  // onClick={() => signOut(session)}
+                  onClick={logout}
+                  className="hover:text-white bg-blue-800 outline-none text-gray-300 "
+                >
+                  Log out
+                </button>
+              </li>
+            )} */
+}
+
+// const [user, loading, error] = useAuthState(auth);
+// const router = useRouter();
+
+// const logout = () => {
+//   logOut(auth);
+//   router.push(
+//     // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/"
+//     "http://localhost:3000/"
+//   );
+// };
+
+// import { signOut as logOut } from "firebase/auth";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import auth from "@/firebase/firebaseAuth";
+// import { useRouter } from "next/router";

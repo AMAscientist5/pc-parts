@@ -1,5 +1,5 @@
 import MainLayout from "@/components/Layout/MainLayout";
-import { Row } from "antd";
+// import { Row } from "antd";
 import Image from "next/image";
 import React from "react";
 
@@ -23,19 +23,6 @@ const ProductDetailsPage = ({ pcData }) => {
 
   return (
     <>
-      {/* <div class="container px-5 mx-auto">
-        <div class="text-center mx-auto flex flex-wrap">
-          <div class=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-            <div class="flex mb-4">
-              <a class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-2xl font-bold px-1">
-                Description
-              </a>
-            </div>
-            <p class="leading-relaxed mb-4">{pcData?.description}</p>
-          </div>
-        </div>
-      </div> */}
-
       <section class="text-gray-600 body-font overflow-hidden">
         <div class="container px-5 lg:pt-24 pt-4 pb-16 mx-auto">
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -237,36 +224,6 @@ const ProductDetailsPage = ({ pcData }) => {
             </div>
           </div>
         </section>
-
-        {/* <section class="text-gray-600 body-font overflow-hidden">
-          <div class="container  mx-auto">
-            <div class="lg:w-4/5 mx-auto flex flex-wrap">
-              <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                {pcData.reviews.slice(0, 2).map((review, i) => (
-                  <div key={i} class="lg:w-2/3 md:w-1/2 w-full">
-                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-                      <Image
-                        className="w-12 h-12 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                        width={500}
-                        height={500}
-                        alt="okk"
-                        src="https://dummyimage.com/84x84"
-                      ></Image>
-                      <div class="flex-grow">
-                        <h2 class="text-gray-900 title-font font-medium">
-                          {review.username}
-                        </h2>
-                        <p class="text-gray-500">
-                          {review.comment.slice(0, 1)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section> */}
       </div>
     </>
   );
@@ -303,4 +260,51 @@ export async function getStaticProps(context) {
       pcData,
     },
   };
+}
+
+{
+  /* <div class="container px-5 mx-auto">
+        <div class="text-center mx-auto flex flex-wrap">
+          <div class=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+            <div class="flex mb-4">
+              <a class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-2xl font-bold px-1">
+                Description
+              </a>
+            </div>
+            <p class="leading-relaxed mb-4">{pcData?.description}</p>
+          </div>
+        </div>
+      </div> */
+}
+
+{
+  /* <section class="text-gray-600 body-font overflow-hidden">
+          <div class="container  mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+              <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                {pcData.reviews.slice(0, 2).map((review, i) => (
+                  <div key={i} class="lg:w-2/3 md:w-1/2 w-full">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                      <Image
+                        className="w-12 h-12 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                        width={500}
+                        height={500}
+                        alt="okk"
+                        src="https://dummyimage.com/84x84"
+                      ></Image>
+                      <div class="flex-grow">
+                        <h2 class="text-gray-900 title-font font-medium">
+                          {review.username}
+                        </h2>
+                        <p class="text-gray-500">
+                          {review.comment.slice(0, 1)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section> */
 }

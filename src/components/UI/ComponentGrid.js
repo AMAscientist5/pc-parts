@@ -42,25 +42,8 @@ const ComponentGrid = ({ pcData }) => {
                 <span className="font-semibold">{product?.average_rating}</span>
               </p>
             </div>
-            {/* <div className="flex flex-col items-center mt-2">
-              <Link href="/build-pc">
-                <Button
-                  onClick={() => dispatch(addToBuild(product))}
-                  type="primary w-full  bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-md shadow-orange-300"
-                >
-                  Add to builder
-                </Button>
-              </Link>
-              <Link href={`/product/${product?._id}`}>
-                <Button type="primary mt-2 shadow-lg shadow-orange-300  bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                  View Details
-                </Button>
-              </Link>
-            </div> */}
+
             <div className="flex flex-col items-center mt-2">
-              {/* <Button type="primary w-full mb-0  bg-gradient-to-r from-indigo-500 to-sky-500 shadow-md shadow-orange-300">
-                Add builder
-              </Button> */}
               <Button className="border-0 w-full primary">
                 <Link href={`/build-pc`}>
                   <Button

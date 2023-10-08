@@ -13,16 +13,12 @@ const allCategory = [
   {
     id: 2,
     image: "https://i.ibb.co/SyD9w4q/download.jpg",
-    // image:
-    // "https://www.startech.com.bd/image/cache/catalog/motherboard/asrock/h81m-vg4-r4-0/h81m-vg4-r4-0-01-500x500.jpg",
     category: "Motherboard",
     categoryName: "motherboard",
   },
   {
     id: 3,
     image: "https://i.ibb.co/gRVK9XR/istockphoto-92434128-612x612.jpg",
-    // image:
-    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw4FKLmlVLeLmQMhnYeQNcE5MDSranFD48DQ&usqp=CAU",
     category: "RAM",
     categoryName: "ram",
   },
@@ -57,7 +53,7 @@ const HomePage = ({ pcData }) => {
     <div className="container mx-auto">
       <Hero />
       <h2 className="my-4 lg:mb-12 lg:text-5xl text-center">
-        Featured Products
+        Featured Product
       </h2>
       <Featured pcData={pcData}></Featured>
       <h2 className="mb-4 mt-20 lg:mb-12 lg:text-5xl text-center">

@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { signOut as logOut } from "firebase/auth";
+// import { signOut as logOut } from "firebase/auth";
 import { signIn } from "next-auth/react";
 
 import { useRouter } from "next/router";
@@ -16,26 +16,8 @@ export default function Signup() {
 
   const { register, handleSubmit } = useForm();
   const router = useRouter();
-  const onSubmit = async (data) => {
-    try {
-      console.log(data, "from handle");
-      const { user } = await createUserWithEmailAndPassword(
-        data.email,
-        data.password
-      );
-
-      if (user) {
-        toast("user created successfully");
-        logOut(auth);
-      }
-      signIn("github", {
-        callbackUrl:
-          // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
-          "http://localhost:3000/build-pc",
-      });
-    } catch (error) {
-      toast("There is something wrong");
-    }
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (
@@ -102,8 +84,7 @@ export default function Signup() {
           onClick={() =>
             signIn("github", {
               callbackUrl:
-                // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/build-pc",
-                "http://localhost:3000/build-pc",
+                "https://pc-builder-client-r46jx5dfu-amascientist5.vercel.app/build-pc",
             })
           }
           className="flex items-center justify-center text-white"
@@ -115,3 +96,23 @@ export default function Signup() {
     </div>
   );
 }
+
+// const onSubmit = async (data) => {
+// try {
+//   console.log(data, "from handle");
+//   const { user } = await createUserWithEmailAndPassword(
+//     data.email,
+//     data.password
+//   );
+//   if (user) {
+//     toast("user created successfully");
+//     logOut(auth);
+//   }
+//   signIn("github", {
+//     callbackUrl:
+//       // "https://pc-builder-client-fkyuo4k6y-amascientist5.vercel.app/",
+//       "http://localhost:3000/build-pc",
+//   });
+// } catch (error) {
+//   toast("There is something wrong");
+// }
